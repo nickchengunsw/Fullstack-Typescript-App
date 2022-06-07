@@ -1,0 +1,2 @@
+const schema = {"$schema":"http://json-schema.org/draft-07/schema#","definitions":{"OrdersObject":{"type":"object","properties":{"totalAmount":{"type":"object","properties":{"amount":{"type":"string"},"currency":{"type":"string"}},"required":["amount","currency"]}},"required":["totalAmount"]}}} as const;
+export default schema.definitions;
