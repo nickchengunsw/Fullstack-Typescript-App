@@ -1,11 +1,8 @@
 import express from 'express'
 import validateBody from '../utils/requestValidator';
 import ordersRoute from './orders.route'
-import orderSchema from '../../_schema';
 
 const router = express.Router();
-router.use(express.json());
-router.use(validateBody(orderSchema.OrdersObject));
-router.use('/orders', ordersRoute);
+router.use('/orders',validateBody(),  ordersRoute);
 
 export default router;
