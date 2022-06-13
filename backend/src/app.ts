@@ -1,4 +1,4 @@
-import {createServer} from './utils/server'
+import {createServer} from './server'
 
 const app = createServer().then(server => {
     server.listen(3000, () => {

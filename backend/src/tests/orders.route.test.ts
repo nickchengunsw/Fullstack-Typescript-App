@@ -1,7 +1,7 @@
 import request from 'supertest'
 import {Express} from 'express-serve-static-core'
 import ordersRoute  from '../routes/orders.route';
-import {createServer} from '../utils/server'
+import {createServer} from '../server'
 
 let app: Express;
 describe('The order route', () => {
