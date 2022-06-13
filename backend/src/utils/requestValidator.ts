@@ -9,7 +9,6 @@ function validateBody() {
     const schema = orderSchema.OrdersObject;
     const validate = ajv.compile(schema);
     return (req: any, res: any, next: NextFunction) => {
-        console.log("body: ", req.body);
         if (!validate(req.body)){
             return res.status(400).json(validate.errors);
         }

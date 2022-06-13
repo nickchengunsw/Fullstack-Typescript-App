@@ -13,6 +13,7 @@ export default class ApiProvider {
             data: orderData
         };
         const response = await axios.request(options);
+        console.log("response: ", response);
         return response
     }
 }
