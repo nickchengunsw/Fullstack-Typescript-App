@@ -36,7 +36,7 @@ const Items = () => {
     return (
         <>
             <ItemList {...itemsArray}/>
-            <button data-testid='add-item' onClick={(e) => addItem(e)}>
+            <button data-testid='add-item' onClick={(e) => addItem(e)} >
                 Add Item
             </button>
             <button data-testid='remove-item' onClick={(e) => removeItem(e)}>
