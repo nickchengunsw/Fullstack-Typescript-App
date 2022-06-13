@@ -1,6 +1,5 @@
 import { OrdersObject } from '../../models/orderObject.model';
 import axios, { AxiosResponse } from 'axios';
-import orderData from '../../localData/validOrder'
 export default class ApiProvider {
     async order(orderObject: OrdersObject): Promise<AxiosResponse> {
         const options = {
@@ -10,7 +9,7 @@ export default class ApiProvider {
               Accept: 'application/json',
               'Content-Type': 'application/json',
             },
-            data: orderData
+            data: orderObject
         };
         const response = await axios.request(options);
         return response

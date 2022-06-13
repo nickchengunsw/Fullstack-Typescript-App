@@ -3,7 +3,6 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom/extend-expect';
 import Form from './Form';
-import ReactDOM from 'react-dom';
 
 describe('The form', () => {
     it('should be defined', () => {
@@ -46,15 +45,16 @@ describe('The form', () => {
         })
     });
 
-    it('should allow user to submit the form to the api', async () => {
+    it('should allow user to submit the form to the api and return a reponse', async () => {
         render(<Form />);
         userEvent.type(screen.getByTestId('consumer.givenNames'), 'Nick');
         userEvent.type(screen.getByTestId('consumer.phoneNumber'), '999');
+        userEvent.click(screen.getByTestId('submit-button'));
         await waitFor(() => {
-            expect(screen.getByTestId('consumer.givenNames')).toHaveValue('Nick');
+            expect(screen.getByTestId('response')).toBeDefined();
         })
         await waitFor(() => {
-            expect(screen.getByTestId('consumer.phoneNumber')).toHaveValue('999');
+            expect(screen.getByTestId('response').textContent).toContain('Status: 400');
         })
     });
 });

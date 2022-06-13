@@ -1,6 +1,6 @@
 import React from 'react';
 import { useOrderState } from '../stateManagement/OrdersObjectContainer';
-import { textBlockStyle } from '../styles/form-styles';
+import { inputStyle, textBlockStyle } from '../styles/form-styles';
 
 interface InputProps {
     name: string;
@@ -15,7 +15,8 @@ const Input = (props: InputProps) => {
     return (
         <>
             <label htmlFor={`${name}`} style={textBlockStyle}>{name}</label>
-            <input type='text' name={name} data-testid={`${name}`} onChange={onChange} required={required}/>
+            <input type='text' name={name} data-testid={`${name}`} onChange={onChange} required={required} style={inputStyle}>
+            </input>
         </>
     )
 }
