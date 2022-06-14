@@ -1,5 +1,6 @@
 {
     "scripts": {
+        "install": "(cd frontend && yarn install) & (cd backend && yarn install)",
         "dev": "(cd frontend && yarn dev) & (cd backend && yarn dev)"
     }
 }
