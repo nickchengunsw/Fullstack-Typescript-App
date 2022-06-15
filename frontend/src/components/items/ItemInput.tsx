@@ -23,14 +23,14 @@ const ItemInput = (props: Props) => {
     return (
         <>
             <Input name={`items.${index}.gtin`} />
-            <Input name={`items.${index}.quantity`} />
-            <Input name={`items.${index}.price.amount`} />
-            <Input name={`items.${index}.price.currency`} />
-            <Input name={`items.${index}.name`} />
-            <Input name={`items.${index}.category`} />
-            <Input name={`items.${index}.subcategory`} />
-            <Input name={`items.${index}.sku`} />
-            <Input name={`items.${index}.brand`} />
+            <Input name={`items.${index}.quantity`} value={10} />
+            <Input name={`items.${index}.price.amount`} value='12'/>
+            <Input name={`items.${index}.price.currency`} value='EUR'/>
+            <Input name={`items.${index}.name`} value='10 EUR'/>
+            <Input name={`items.${index}.category`} value='Cash'/>
+            <Input name={`items.${index}.subcategory`} value='Inflation'/>
+            <Input name={`items.${index}.sku`} value='abc'/>
+            <Input name={`items.${index}.brand`} value='eu'/>
         </>
     )
 }

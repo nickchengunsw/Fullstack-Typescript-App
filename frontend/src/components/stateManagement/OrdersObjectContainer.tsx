@@ -1,30 +1,49 @@
 import { createState, useState } from '@hookstate/core';
 import { Amount, Consumer, Discounts, Frequency, Item, Merchant, Shipping } from '../../models/orderObject.model';
 const orderState = createState({
-    totalAmount: {} as Amount,
-    consumer: {} as Consumer,
-    shipping: {} as Shipping,
+    totalAmount: {
+        amount: '10',
+        currency: 'EUR'
+    } as Amount,
+    consumer: {
+        givenNames: 'John',
+        surname: 'Doe',
+    } as Consumer,
+    shipping: {
+        countryCode: 'NL',
+        name: 'John Doe',
+        postCode: '1234AB',
+        line1: 'Street 1',
+    } as Shipping,
     items: [{
         gtin: '',
         quantity: 0,
         price: {
-            amount: '',
-            currency: ''
+            amount: '12',
+            currency: 'EUR'
         },
-        name: '',
-        category: '',
-        subcategory: [''],
-        sku: '',
-        brand: ''
+        name: '10 EUR',
+        category: 'Cash',
+        subcategory: ['Inflation'],
+        sku: 'abc',
+        brand: 'EU'
     }] as Item[],
-    discounts: {} as Discounts,
-    merchant: {} as Merchant,
+    merchant: {
+        redirectCancelUrl: 'https://portal.integration.scalapay.com/failure-url',
+        redirectConfirmUrl: 'https://portal.integration.scalapay.com/success-url',
+    } as Merchant,
     merchantReference: '',
-    taxAmount: {} as Amount,
-    type: '',
-    product: '',
-    frequency: {} as Frequency,
-    orderExpiryMilliseconds: 0,
+    taxAmount: {
+        amount: '12',
+        currency: 'EUR'
+    } as Amount,
+    type: 'online',
+    product: 'later',
+    frequency: {
+        number: 10,
+        frequencyType: '10'
+    } as Frequency,
+    orderExpiryMilliseconds: 60000,
 });
 
 export function useOrderState() {

@@ -3,7 +3,7 @@ export interface OrdersObject {
     consumer: Consumer;
     shipping: Shipping;
     items: Item[];
-    discounts?: Discounts;
+    discounts?: Discounts[];
     merchant: Merchant;
     merchantReference?: string;
     taxAmount?: Amount;

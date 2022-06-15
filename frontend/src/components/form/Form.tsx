@@ -11,7 +11,7 @@ const Form = () => {
     const orderState = useOrderState();
     const [response, setResponse] = useState<AxiosResponse | null>();
     const submit = async (e : any) => {
-        // e.preventDefault();
+        e.preventDefault();
         const orderObject = JSON.parse(JSON.stringify(orderState.state));
         let res;
         try { 
@@ -27,30 +27,20 @@ const Form = () => {
         <>
             <div style={container}>
                 <form>
-                    <Input name='totalAmount.amount' required/>
-                    <Input name='totalAmount.currency' required/>
-                    <Input name='consumer.givenNames' required/>
-                    <Input name='consumer.surname' />
+                    <Input name='totalAmount.amount' value='10' required/>
+                    <Input name='totalAmount.currency' value='EUR' required/>
+                    <Input name='consumer.givenNames' value='John' required/>
+                    <Input name='consumer.surname' value='Doe' required/>
                     <Input name='consumer.email' />
-                    <Input name='consumer.phoneNumber' required/>
-                    <Input name='shipping.countryCode' required/>
-                    <Input name='shipping.name' required/>
-                    <Input name='shipping.postCode' required/>
-                    <Input name='shipping.line1' required/>
+                    <Input name='consumer.phoneNumber' />
+                    <Input name='shipping.countryCode' value='NL' required/>
+                    <Input name='shipping.name' value='John Doe' required/>
+                    <Input name='shipping.postCode' value='1234AB' required/>
+                    <Input name='shipping.line1' value='Street 1' required/>
                     <Input name='shipping.phoneNumber' />
                     <Input name='shipping.suburb' />
-                    <Input name='discounts.amount' />
-                    <Input name='discounts.displayName' />
-                    <Input name='merchant.redirectCancelUrl' />
-                    <Input name='merchant.redirectConfirmUrl' />
-                    <Input name='merchantReference' />
-                    <Input name='taxAmount.amount' />
-                    <Input name='taxAmount.currency' />
-                    <Input name='type' />
-                    <Input name='product' />
-                    <Input name='frequency.number' />
-                    <Input name='frequency.string' />
-                    <Input name='orderExpiryMilliseconds' />
+                    <Input name='merchant.redirectCancelUrl' value='https://portal.integration.scalapay.com/failure-url' required/>
+                    <Input name='merchant.redirectConfirmUrl' value='https://portal.integration.scalapay.com/success-url' required/>
                     <ItemList />
                     <button data-testid='submit-button' onClick={(e) => submit(e)}> Submit! </button>
                     {response && <Response response={response} />}
