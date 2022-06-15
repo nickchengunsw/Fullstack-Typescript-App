@@ -32,18 +32,6 @@ const orderState = createState({
         redirectCancelUrl: 'https://portal.integration.scalapay.com/failure-url',
         redirectConfirmUrl: 'https://portal.integration.scalapay.com/success-url',
     } as Merchant,
-    merchantReference: '',
-    taxAmount: {
-        amount: '12',
-        currency: 'EUR'
-    } as Amount,
-    type: 'online',
-    product: 'later',
-    frequency: {
-        number: 10,
-        frequencyType: '10'
-    } as Frequency,
-    orderExpiryMilliseconds: 60000,
 });
 
 export function useOrderState() {
