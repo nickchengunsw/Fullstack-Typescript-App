@@ -10,4 +10,5 @@ This app demonstrates my technical skills and best practices in:
 - repository architecture for extensible industry-level projects
  
 To start the application, run the following command in the root folder:
+
 ``` cd /backend & yarn install & cd /frontend & yarn install yarn dev ```
