@@ -1,7 +1,7 @@
 import { Response } from 'express';
 import { OrdersObject } from '../models/orderObject.model';
 import { RequestBody } from '../types/ordersPostRequest';
-import { request } from '../controller/controller'
+import { request } from '../api/api'
 
 async function createOrder (req: RequestBody<OrdersObject>, res: Response){
     try {
