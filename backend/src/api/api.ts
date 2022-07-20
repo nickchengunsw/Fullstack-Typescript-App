@@ -3,7 +3,7 @@ import axios, { AxiosResponse } from "axios";
 export const request = (object: any) : Promise<AxiosResponse<any, any>> => {
     const options = {
         method: 'POST',
-        url: 'https://integration.api.scalapay.com/v2/orders',
+        url: '<url>',
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
